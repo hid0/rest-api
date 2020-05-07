@@ -14,26 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/products', function () {
-    return response()->json([
-        "message" => "GET Method Success"
-    ]);
-});
+Route::get('/products', 'ProductController@get');
 
-Route::post('/product', function () {
-    return response()->json([
-        "message" => "POST Method Success"
-    ]);
-});
+Route::post('/product', 'ProductController@post');
 
-Route::put('/product/{id}', function ($id) {
-    return response()->json([
-        "message" => "PUT method success".$id
-    ]);
-});
+Route::put('/product/{id}', 'ProductController@put');
 
-Route::delete('/product/{id}', function ($id) {
-    return response()->json([
-        "message" => "Delete Method success".$id
-    ]);
-});
+Route::delete('/product/{id}', 'ProductController@delete');
